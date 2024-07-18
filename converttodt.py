@@ -19,8 +19,6 @@ df = spark.read.orc(f"gs://testdata7/bqtest/202403/allstate-test_20240213_0a7367
 
 # Convert the string column to datetime
 df = df.withColumn(string_column_name, to_timestamp(string_column_name, datetime_format))
-df = df.withColumn(string_column_name, add_months(col(string_column_name), 1))
-df = df.withColumn(string_column_name, to_timestamp(string_column_name, datetime_format))
 
 # Write the modified DataFrame to the destination bucket as ORC
 df.write.mode("overwrite").orc(f"gs://testdata7/bqtest/202404/modified/")
