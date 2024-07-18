@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import to_timestamp, add_months, col
+from pyspark.sql.functions import to_timestamp
 
 spark = SparkSession.builder.getOrCreate()
 
