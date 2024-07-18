@@ -21,4 +21,4 @@ df = spark.read.orc(f"gs://testdata7/bqtest/202403/allstate-test_20240213_0a7367
 df = df.withColumn(string_column_name, to_timestamp(string_column_name, datetime_format))
 
 # Write the modified DataFrame to the destination bucket as ORC
-df.write.mode("overwrite").orc(f"gs://testdata7/bqtest/202404/modified/")
+df.write.mode("overwrite").orc(f"gs://testdata7/bqtest/202403/modified/")
